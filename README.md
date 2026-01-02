@@ -1,12 +1,15 @@
 # BreastVision: High-Sensitivity Cancer Detection Pipeline
 
+[![Kaggle](https://img.shields.io/badge/Kaggle-Notebook-blue.svg)](https://www.kaggle.com/code/nimasaghi/breast-cancer)
 ![Domain](https://img.shields.io/badge/Domain-Medical%20Imaging-red) 
 ![Model](https://img.shields.io/badge/Architecture-ConvNeXt--Tiny-blue)
 ![Platform](https://img.shields.io/badge/Platform-Kaggle%20T4%20GPU-orange)
 ![License](https://img.shields.io/badge/License-Apache%202.0-green)
 
+> **Note:** To view the full interactive results, training logs, and high-resolution visual audits, please visit the [Kaggle Notebook](https://www.kaggle.com/code/nimasaghi/breast-cancer).
+
 ## 📌 Project Overview
-This project addresses the challenge of automated breast cancer classification using ultrasound imagery. Unlike standard classification tasks, medical diagnostics require extreme **sensitivity (Recall)** to ensure no malignant cases are missed. This pipeline utilizes a modern **ConvNeXt** architecture combined with custom **Region of Interest (ROI)** extraction to focus on clinical features rather than background noise.
+This project addresses the challenge of automated breast cancer classification using images. Unlike standard classification tasks, medical diagnostics require extreme **sensitivity (Recall)** to ensure no malignant cases are missed. This pipeline utilizes a modern **ConvNeXt** architecture combined with custom **Region of Interest (ROI)** extraction to focus on clinical features rather than background noise.
 
 ---
 
@@ -15,10 +18,10 @@ This project addresses the challenge of automated breast cancer classification u
 Our workflow is divided into four distinct phases, mimicking the process a radiologist follows to evaluate a scan:
 
 ### Phase 1: Data Preparation & Preprocessing
-The raw dataset is organized into clinical splits (Train, Validation, Test). We normalize the imagery to ensure consistent pixel intensity across different ultrasound machine outputs.
+The raw dataset is organized into clinical splits (Train, Validation, Test). We normalize the images to ensure consistent pixel intensity across different output sources.
 
 ### Phase 2: ROI Extraction (The "Cleaner")
-Ultrasound scans often contain "noise" like pectoral muscle, text annotations, and rib shadows. 
+Medical images often contain "noise" like pectoral muscle, text annotations, and rib shadows. 
 * **Technique:** We use a U-Net inspired logic to find the tissue boundaries.
 * **Impact:** By cropping the image to the specific area of interest, we prevent the model from learning "shortcuts" based on background artifacts.
 
